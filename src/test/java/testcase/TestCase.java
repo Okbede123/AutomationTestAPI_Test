@@ -58,7 +58,7 @@ public class TestCase {
         jsonObject.put("environment","env");
         jsonArray.put(jsonObject);
         String body = jsonArray.toString().replace("[","{").replace("]","}");
-        Response response = RestAssured.given().contentType(contentType).body(body).post(url);
+        Response response = RestAssured.given().contentType(contentType).header("test","ok").body(body).post(url);
         System.out.println(response.getBody().asString());
     }
 
